@@ -45,11 +45,7 @@ class SynchronizedBlocked implements Runnable{
             Thread.yield();
     }
     public SynchronizedBlocked(){
-        new Thread(){
-            public void run(){
-                f();
-            }
-        }.start();
+        new Thread(() -> f()).start();
     }
     public void run(){
         System.out.println("Trying to call f()");
